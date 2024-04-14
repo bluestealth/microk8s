@@ -1,0 +1,37 @@
+From de0e0c4dfbf68598d17e756e386b76dc5f487d82 Mon Sep 17 00:00:00 2001
+From: Michael Ryan Dempsey <bluestealth@bluestealth.pw>
+Date: Sun, 14 Apr 2024 13:52:45 -0700
+Subject: [PATCH] Disable Unused Backends
+
+---
+ main.go | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/main.go b/main.go
+index 019b995a..9ff31d13 100644
+--- a/main.go
++++ b/main.go
+@@ -46,15 +46,15 @@ import (
+ 	// Backends need to be imported for their init() to get executed and them to register
+ 	"github.com/coreos/go-systemd/v22/daemon"
+ 	"github.com/flannel-io/flannel/pkg/backend"
+-	_ "github.com/flannel-io/flannel/pkg/backend/alloc"
+-	_ "github.com/flannel-io/flannel/pkg/backend/extension"
++	// _ "github.com/flannel-io/flannel/pkg/backend/alloc"
++	// _ "github.com/flannel-io/flannel/pkg/backend/extension"
+ 	_ "github.com/flannel-io/flannel/pkg/backend/hostgw"
+ 	_ "github.com/flannel-io/flannel/pkg/backend/ipip"
+ 	_ "github.com/flannel-io/flannel/pkg/backend/ipsec"
+-	_ "github.com/flannel-io/flannel/pkg/backend/tencentvpc"
+-	_ "github.com/flannel-io/flannel/pkg/backend/udp"
++	// _ "github.com/flannel-io/flannel/pkg/backend/tencentvpc"
++	// _ "github.com/flannel-io/flannel/pkg/backend/udp"
+ 	_ "github.com/flannel-io/flannel/pkg/backend/vxlan"
+-	_ "github.com/flannel-io/flannel/pkg/backend/wireguard"
++	// _ "github.com/flannel-io/flannel/pkg/backend/wireguard"
+ )
+ 
+ type flagSlice []string
+-- 
+2.44.0
+
